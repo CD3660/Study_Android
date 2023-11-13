@@ -1,0 +1,14 @@
+  //자바코드로 디자인하면 반복문 등을 이용하여 위젯을 동적으로 추가가 가능하다.
+  //그 이외의 미리보기 지원을 하지 않기 때문에 자주 사용하지 않는다.
+
+  //xml로 디자인을 하고 자바코드에서 해당하는 디자인 파일의 리소스를 연결하여 사용한다.
+
+
+  //일단 코드로 디자인 해보기.(xml에 나오는 모든 위젯은 클래스 형태로 존재한다.
+        Button button = new Button(this);//context는 6장 이후에 심화되는 내용이다.
+        button.setText("자바코드로 디자인");
+
+        ConstraintLayout layout = new ConstraintLayout(this);
+        layout.addView(button);
+
+        setContentView(layout);
