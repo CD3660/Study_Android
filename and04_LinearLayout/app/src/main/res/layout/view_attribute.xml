@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:background="#FF0000"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_margin="10dp"
+            android:text="마진 wrap content\n aaaaaaaaaaa \n sdfsdf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    <Button
+        android:layout_marginStart="10dp"
+        android:text="마진 방향 주기"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:padding="20dp"
+        android:text="패딩"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:paddingLeft="100dp"
+        android:text="왼쪽 패딩 내부 여백"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:visibility="invisible"
+        android:text="가시성 (공간을 차지하고 보이지 않는다.)"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:visibility="gone"
+        android:text="가시성 (공간을 차지하지 않고 안 보인다.)"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <ImageView
+        android:src="@drawable/ic_launcher_foreground"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <RelativeLayout
+        android:layout_gravity="right"
+        android:gravity="center"
+        android:background="#EFEFEF"
+        android:layout_width="wrap_content"
+        android:layout_height="150dp">
+        <Button
+            android:gravity="bottom|right"
+            android:text="그래비티"
+            android:layout_width="100dp"
+            android:layout_height="100dp"/>
+        <Button
+            android:layout_marginLeft="100dp"
+            android:gravity="bottom|right"
+            android:text="그래비티"
+            android:layout_width="100dp"
+            android:layout_height="100dp"/>
+
+    </RelativeLayout>
+</LinearLayout>
