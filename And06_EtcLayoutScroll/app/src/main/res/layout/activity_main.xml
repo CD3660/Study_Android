@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    >
+    <HorizontalScrollView
+        android:id="@+id/scroll_h"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <ScrollView
+            android:id="@+id/scroll_v"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:id="@+id/imgv"
+                    android:src="@drawable/ic_launcher_foreground"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:layout_below="@id/imgv"
+                    android:id="@+id/tv_text"
+                    android:layout_width="1000dp"
+                    android:layout_height="wrap_content"
+                    android:text="CD Hello World!"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </RelativeLayout>
+        </ScrollView>
+    </HorizontalScrollView>
+    <View
+        android:id="@+id/btm_nav"
+        android:background="#123"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"/>
+
+</LinearLayout>
