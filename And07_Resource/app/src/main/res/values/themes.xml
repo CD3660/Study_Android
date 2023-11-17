@@ -1,6 +1,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Theme.And07_Resource" parent="Theme.Material3.DayNight">
+        <item name="windowNoTitle">true</item>
 
     </style>
 </resources>

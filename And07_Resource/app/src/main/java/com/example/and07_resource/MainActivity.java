@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -12,9 +13,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.shape_layout);
+        setContentView(R.layout.carrot_layout);
 
-        Log.d(TAG, "String res: " + R.string.version);
-        Log.d(TAG, "String res(str): " + getString(R.string.version));
+        ImageView iv  = findViewById(R.id.profile);
+        iv.setOnClickListener(v->{
+            Log.d("CD", "프로필 클릭");
+        });
+
     }
 }
