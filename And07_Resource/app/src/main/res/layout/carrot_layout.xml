@@ -139,50 +139,66 @@
             android:layout_marginTop="10dp"
             android:background="@color/app_main_color" />
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/owner_menu"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentLeft="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
                 android:padding="10dp"
-                android:textSize="22dp"
                 android:text="사장님 메뉴"
+                android:textSize="22dp"
                 android:textStyle="bold" />
-            <ImageView
-                android:id="@+id/menu1"
-                android:layout_below="@+id/owner_menu"
-                android:src="@drawable/ic_menu1"
-                style="@style/menu_img"/>
-            <TextView
-                android:text="비즈프로필 관리"
-                android:layout_toRightOf="@id/menu1"
-                android:layout_alignTop="@id/menu1"
-                style="@style/menu_txt"/>
-            <ImageView
-                android:id="@+id/menu2"
-                android:layout_below="@+id/menu1"
-                android:src="@drawable/ic_menu2"
-                style="@style/menu_img"/>
-            <TextView
-                android:text="광고"
-                android:layout_toRightOf="@id/menu2"
-                android:layout_alignTop="@id/menu2"
-                style="@style/menu_txt"/>
-        </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/menu1"
+                    style="@style/menu_img"
+                    android:src="@drawable/ic_menu1" />
+
+                <TextView
+                    style="@style/menu_txt"
+                    android:layout_alignTop="@id/menu1"
+                    android:layout_toRightOf="@id/menu1"
+                    android:text="비즈프로필 관리" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/menu2"
+                    style="@style/menu_img"
+                    android:src="@drawable/ic_menu2" />
+
+                <TextView
+                    style="@style/menu_txt"
+                    android:layout_alignTop="@id/menu2"
+                    android:layout_toRightOf="@id/menu2"
+                    android:text="광고" />
+            </RelativeLayout>
+        </LinearLayout>
+
         <View
             android:layout_width="match_parent"
             android:layout_height="5dp"
             android:layout_marginTop="10dp"
             android:background="@color/app_main_color" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
             <TextView
                 android:id="@+id/my_menu"
                 android:layout_width="match_parent"
@@ -191,75 +207,90 @@
                 android:text="나의 활동"
                 android:textSize="22dp"
                 android:textStyle="bold" />
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
                 <ImageView
                     android:id="@+id/menu3"
+                    style="@style/menu_img"
                     android:layout_alignParentTop="true"
-                    android:src="@drawable/ic_menu3"
-                    style="@style/menu_img"/>
+                    android:src="@drawable/ic_menu3" />
+
                 <TextView
-                    android:text="내 동네 설정"
-                    android:layout_toRightOf="@id/menu3"
+                    style="@style/menu_txt"
                     android:layout_alignTop="@id/menu3"
-                    style="@style/menu_txt"/>
+                    android:layout_toRightOf="@id/menu3"
+                    android:text="내 동네 설정" />
             </RelativeLayout>
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
                 <ImageView
                     android:id="@+id/menu4"
+                    style="@style/menu_img"
                     android:layout_alignParentTop="true"
-                    android:src="@drawable/ic_menu4"
-                    style="@style/menu_img"/>
+                    android:src="@drawable/ic_menu4" />
+
                 <TextView
-                    android:text="동네 인증하기"
-                    android:layout_toRightOf="@id/menu4"
+                    style="@style/menu_txt"
                     android:layout_alignTop="@id/menu4"
-                    style="@style/menu_txt"/>
+                    android:layout_toRightOf="@id/menu4"
+                    android:text="동네 인증하기" />
             </RelativeLayout>
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
                 <ImageView
                     android:id="@+id/menu5"
+                    style="@style/menu_img"
                     android:layout_alignParentTop="true"
-                    android:src="@drawable/ic_menu5"
-                    style="@style/menu_img"/>
+                    android:src="@drawable/ic_menu5" />
+
                 <TextView
-                    android:text="키워드 알림"
-                    android:layout_toRightOf="@id/menu5"
+                    style="@style/menu_txt"
                     android:layout_alignTop="@id/menu5"
-                    style="@style/menu_txt"/>
+                    android:layout_toRightOf="@id/menu5"
+                    android:text="키워드 알림" />
             </RelativeLayout>
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
                 <ImageView
                     android:id="@+id/menu6"
+                    style="@style/menu_img"
                     android:layout_alignParentTop="true"
-                    android:src="@drawable/ic_menu4"
-                    style="@style/menu_img"/>
+                    android:src="@drawable/ic_menu4" />
+
                 <TextView
-                    android:text="모아보기"
-                    android:layout_toRightOf="@id/menu6"
+                    style="@style/menu_txt"
                     android:layout_alignTop="@id/menu6"
-                    style="@style/menu_txt"/>
+                    android:layout_toRightOf="@id/menu6"
+                    android:text="모아보기" />
             </RelativeLayout>
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
                 <ImageView
                     android:id="@+id/menu7"
+                    style="@style/menu_img"
                     android:layout_alignParentTop="true"
-                    android:src="@drawable/ic_menu6"
-                    style="@style/menu_img"/>
+                    android:src="@drawable/ic_menu6" />
+
                 <TextView
-                    android:text="당근가계부"
-                    android:layout_toRightOf="@id/menu7"
+                    style="@style/menu_txt"
                     android:layout_alignTop="@id/menu7"
-                    style="@style/menu_txt"/>
+                    android:layout_toRightOf="@id/menu7"
+                    android:text="당근가계부" />
             </RelativeLayout>
 
         </LinearLayout>
