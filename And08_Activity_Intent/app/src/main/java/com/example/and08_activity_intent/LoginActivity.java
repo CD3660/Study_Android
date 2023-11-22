@@ -10,6 +10,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class LoginActivity extends AppCompatActivity {
     Button btn_login;
     EditText edt_id, edt_pw;
@@ -28,8 +30,23 @@ public class LoginActivity extends AppCompatActivity {
             String pw = edt_pw.getText().toString();
             if("admin".equals(id)&&"admin1234".equals(pw)){
                 Log.d("로그인 성공", id);
+                LoginDTO dto = new LoginDTO(id,pw);
+                ArrayList<LoginDTO> list = new ArrayList<>();
+                list.add(new LoginDTO("id1", "pw1"));
+                list.add(new LoginDTO("id2", "pw2"));
+
+
                 Intent intent = new Intent(this, MainActivity.class);
+                intent.putExtra("strkey", "테스트데이터 스트링");
+                intent.putExtra("intkey", 111);
+                intent.putExtra("dtokey",dto);
+                intent.putExtra("listkey", list);
+
+
+
+
                 startActivity(intent);
+                finish();
             } else {
                 Log.d("로그인 실패", id);
             }
@@ -40,4 +57,6 @@ public class LoginActivity extends AppCompatActivity {
             startActivity(intent);
         });
     }
+
+
 }
