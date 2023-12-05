@@ -1,0 +1,19 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Project01_CDTalk" parent="Theme.MaterialComponents.Light">
+        <!-- 액션바 색상을 바꾼다. -->
+        <item name="colorPrimary">@color/main_color</item>
+        <!-- 시계나 알림이 있는 영역 : status_bar
+            android:statusBarColor : 스테이터스바 배경 색 변경
+            android:windowLightStatusBar/true : 밝은색 기본컬러일 시 스태이터스 바의 요소가 검은색으로 나온다.
+        -->
+        <item name="android:statusBarColor">@color/main_color</item>
+        <item name="android:windowLightStatusBar">true</item>
+
+        <!-- 전체 글꼴 적용 -->
+        <item name="fontFamily">@font/main_font</item>
+
+    </style>
+
+    <style name="Theme.Project01_CDTalk" parent="Base.Theme.Project01_CDTalk" />
+</resources>

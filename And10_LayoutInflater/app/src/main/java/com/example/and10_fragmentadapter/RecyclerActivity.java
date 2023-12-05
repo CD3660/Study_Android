@@ -18,6 +18,7 @@ public class RecyclerActivity extends AppCompatActivity {
         TextView tv_chart = findViewById(R.id.tv_chart);
         tv_chart.setOnClickListener(v -> {
             getSupportFragmentManager().beginTransaction().replace(id.container, new RecyclerFragment()).commit();
+            tv_chart.setTextColor(getResources().getColor(color.app_main_color));
         });
     }
 }
