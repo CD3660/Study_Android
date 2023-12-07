@@ -14,7 +14,7 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-
+        getSupportActionBar().hide();
 
         ProgressDialog dialog = new ProgressDialog(this);
         dialog.setTitle("CD Talk");
@@ -25,7 +25,7 @@ public class SplashActivity extends AppCompatActivity {
         new Handler().postDelayed(() -> {
             dialog.dismiss();
             intentMain();
-        },5000);
+        },2000);
     }
     public void intentMain(){
         runOnUiThread(() -> {

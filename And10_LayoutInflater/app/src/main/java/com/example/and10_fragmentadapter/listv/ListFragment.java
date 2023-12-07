@@ -19,7 +19,7 @@ public class ListFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_list, container, false);
-        String[] arr = new String[10];
+        String[] arr = new String[30];
         for (int i = 0; i<arr.length; i++){
             arr[i] = "글자"+i;
         }
