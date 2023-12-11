@@ -9,6 +9,7 @@ import android.os.Bundle;
 import com.example.project01_cdtalk.chat.ChatFragment;
 import com.example.project01_cdtalk.databinding.ActivityMainBinding;
 import com.example.project01_cdtalk.friend.FriendFragment;
+import com.example.project01_cdtalk.opentalk.OpenTalkMainFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,8 +32,10 @@ public class MainActivity extends AppCompatActivity {
             actionBar.setTitle(item.getTitle());
             if(item.getItemId() == R.id.tab1){
                 changeFragment(new FriendFragment());
-            }else if(item.getItemId() == R.id.tab2){
+            } else if(item.getItemId() == R.id.tab2){
                 changeFragment(new ChatFragment());
+            } else if(item.getItemId() == R.id.tab3){
+                changeFragment(new OpenTalkMainFragment());
             }
             return true;
         });

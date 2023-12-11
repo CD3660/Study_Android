@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:orientation="horizontal">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_above="@id/tv_name"
+        android:layout_centerHorizontal="true"
+        app:cardCornerRadius="20dp"
+        android:layout_marginRight="20dp">
+
+        <ImageView
+            android:id="@+id/imgv_profile"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/profile0" />
+    </androidx.cardview.widget.CardView>
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <TextView
+            android:ems="11"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:id="@+id/roomTitle"
+            android:text="다이어트 수다방"
+            android:textSize="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <TextView
+            android:ems="20"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:id="@+id/tagArr"
+            android:layout_marginTop="4dp"
+            android:text="다이어트 수다방"
+            android:textColor="#9C9C9C"
+            android:textSize="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/chatCnt"
+                android:layout_marginTop="4dp"
+                android:text="277명 참여중"
+                android:textColor="#9C9C9C"
+                android:textSize="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/recent"
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="5dp"
+                android:text="방금 대화"
+                android:textColor="#BF2AD9"
+                android:textSize="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+
+    </LinearLayout>
+    <Button
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="참여"
+        android:textColor="#5B5B5B"
+        android:backgroundTint="#EAEAEA"
+        android:layout_width="60dp"
+        android:layout_height="40dp"/>
+</LinearLayout>
