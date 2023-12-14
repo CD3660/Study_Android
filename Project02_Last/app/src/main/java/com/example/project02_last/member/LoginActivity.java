@@ -51,48 +51,10 @@ public class LoginActivity extends AppCompatActivity {
                 .fallback(R.drawable.ic_launcher_background)//null 반환시
                 .into(binding.imgvLogo);
 
-        NaverIdLoginSDK.INSTANCE.initialize(this, "@string/CLIENT_ID_NAVER", "@string/CLIENT_SECRET_NAVER", "@string/CLIENT_NAME_NAVER");
-        binding.buttonOAuthLoginImg.setOAuthLogin(new OAuthLoginCallback() {
-            @Override
-            public void onSuccess() {
-                Log.d("네이버", "onSuccess: " + NaverIdLoginSDK.INSTANCE.getAccessToken());
+        NaverIdLoginSDK.INSTANCE.initialize(this, getString(  R.string.CLIENT_ID_NAVER ), getString(  R.string.CLIENT_SECRET_NAVER ), getString(  R.string.CLIENT_NAME_NAVER ));
 
-
-                new NidOAuthLogin().callProfileApi(new NidProfileCallback<NidProfileResponse>() {
-                    @Override
-                    public void onSuccess(NidProfileResponse nidProfileResponse) {
-
-
-                        Log.d("네이버", "onSuccess: " + nidProfileResponse.getProfile().getEmail());
-                        Log.d("네이버", "onSuccess: " + nidProfileResponse.getProfile().getName());
-                        Log.d("네이버", "onSuccess: " + nidProfileResponse.getProfile().getProfileImage());
-                    }
-
-                    @Override
-                    public void onFailure(int i, @NonNull String s) {
-
-                    }
-
-                    @Override
-                    public void onError(int i, @NonNull String s) {
-
-                    }
-                });
-
-            }
-
-            @Override
-            public void onFailure(int i, @NonNull String s) {
-                Log.d("네이버", "onFailure: ");
-            }
-
-            @Override
-            public void onError(int i, @NonNull String s) {
-                Log.d("네이버", "onError: ");
-            }
-        });
         binding.btnLogin.setOnClickListener(v -> {
-            login(binding.edtId.getText().toString(),binding.edtPw.getText().toString());
+            login(binding.edtId.getText().toString(), binding.edtPw.getText().toString());
         });
 
         getHashKey();
@@ -102,7 +64,6 @@ public class LoginActivity extends AppCompatActivity {
         });
 
     }
-
 
 
     public void naverlogin() {
@@ -115,7 +76,7 @@ public class LoginActivity extends AppCompatActivity {
                 new NidOAuthLogin().callProfileApi(new NidProfileCallback<NidProfileResponse>() {
                     @Override
                     public void onSuccess(NidProfileResponse nidProfileResponse) {
-                        login(nidProfileResponse.getProfile().getEmail(), "");
+                        login(nidProfileResponse.getProfile().getEmail(), null);
 
                         Log.d("네이버", "onSuccess: " + nidProfileResponse.getProfile().getEmail());
                         Log.d("네이버", "onSuccess: " + nidProfileResponse.getProfile().getName());
@@ -171,7 +132,7 @@ public class LoginActivity extends AppCompatActivity {
     public void kakaoLogin() {
 
         //        KakaoSdk.init(this, "{NATIVE_APP_KEY}")
-        KakaoSdk.init(this, "@string/NATIVE_APP_KEY");
+        KakaoSdk.init(this, getString(R.string.NATIVE_APP_KEY));
         Function2<OAuthToken, Throwable, Unit> callback = new Function2<OAuthToken, Throwable, Unit>() {
             @Override
             public Unit invoke(OAuthToken oAuthToken, Throwable error) {
@@ -207,19 +168,23 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    public void login(String user_id, String user_pw){
-        new CommonConn(this, "login.me")
-                .addParamMap("user_id", user_id)
-                .addParamMap("user_pw", user_pw)
-                .onExcute((isResult, data) -> {
-                    MemberVO vo = new Gson().fromJson(data, MemberVO.class);
-                    if (vo == null) {
-                        Toast.makeText(this, "아이디 또는 패스워드 틀림", Toast.LENGTH_SHORT).show();
-                        return;
-                    }
-                    Intent intent = new Intent(this, MainActivity.class);
-                    startActivity(intent);
+    public void login(String user_id, String user_pw) {
+        CommonConn conn = new CommonConn(this, "login.me")
+                .addParamMap("user_id", user_id);
+        if (user_pw == null) {
+            conn.addParamMap("social", "y");
+        } else {
+            conn.addParamMap("user_pw", user_pw);
+        }
+        conn.onExcute((isResult, data) -> {
+            MemberVO vo = new Gson().fromJson(data, MemberVO.class);
+            if (vo == null) {
+                Toast.makeText(this, "아이디 또는 패스워드 틀림", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
 
-                });
+        });
     }
 }

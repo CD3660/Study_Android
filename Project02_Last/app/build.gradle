@@ -58,4 +58,7 @@ dependencies {
     //카카오 로그인 API
     implementation "com.kakao.sdk:v2-user:2.18.0"
 
+    //smooth bottom bar
+    implementation 'com.github.ibrahimsn98:SmoothBottomBar:1.7.9'
+
 }
