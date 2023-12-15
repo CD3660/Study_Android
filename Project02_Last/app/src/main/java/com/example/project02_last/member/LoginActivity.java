@@ -62,10 +62,7 @@ public class LoginActivity extends AppCompatActivity {
         binding.imgvKakaoLogin.setOnClickListener(v -> {
             kakaoLogin();
         });
-
     }
-
-
     public void naverlogin() {
         binding.buttonOAuthLoginImg.setOAuthLogin(new OAuthLoginCallback() {
             @Override
@@ -169,7 +166,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void login(String user_id, String user_pw) {
-        CommonConn conn = new CommonConn(this, "login.me")
+        CommonConn conn = new CommonConn(this,"login.me")
                 .addParamMap("user_id", user_id);
         if (user_pw == null) {
             conn.addParamMap("social", "y");
@@ -183,6 +180,7 @@ public class LoginActivity extends AppCompatActivity {
                 return;
             }
             Intent intent = new Intent(this, MainActivity.class);
+            intent.putExtra("MemberVO", vo);
             startActivity(intent);
 
         });

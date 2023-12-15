@@ -1,6 +1,8 @@
 package com.example.project02_last.member;
 
-public class MemberVO {
+import java.io.Serializable;
+
+public class MemberVO implements Serializable {
 	private String user_id, user_pw, name, email, birth, phone, address, post, socail, admin;
 
 	public String getUser_id() {

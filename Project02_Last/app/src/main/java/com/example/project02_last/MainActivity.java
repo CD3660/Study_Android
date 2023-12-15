@@ -9,6 +9,7 @@ import android.util.Log;
 import com.example.project02_last.common.CommonConn;
 import com.example.project02_last.customer.CustomerFragment;
 import com.example.project02_last.databinding.ActivityMainBinding;
+import com.example.project02_last.member.MemberVO;
 
 import me.ibrahimsn.lib.OnItemSelectedListener;
 
@@ -19,7 +20,8 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
         super.onCreate(savedInstanceState);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
+        MemberVO vo = (MemberVO) getIntent().getSerializableExtra("MemberVO");
+        Log.d("임시", "onCreate: "+vo.getName());
         binding.bottomBar.setOnItemSelectedListener(this);
 
         onItemSelect(0);

@@ -1,6 +1,6 @@
 package com.example.project02_last.customer;
 
-public class CustomerDTO {
+public class CustomerVO {
     private int customer_id;
     private String name, gender, email, phone;
 
