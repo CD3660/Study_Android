@@ -11,6 +11,7 @@ import com.example.project02_last.common.CommonConn;
 import com.example.project02_last.customer.CustomerFragment;
 import com.example.project02_last.databinding.ActivityMainBinding;
 import com.example.project02_last.file.FileActivity;
+import com.example.project02_last.map.CdMapFragment;
 import com.example.project02_last.member.MemberVO;
 
 import me.ibrahimsn.lib.OnItemSelectedListener;
@@ -41,6 +42,8 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedLis
             Intent intent = new Intent(MainActivity.this, FileActivity.class);
             startActivity(intent);
 
+        }else if(i==2){
+            changeFragment(new CdMapFragment());
         }
 
         return false;

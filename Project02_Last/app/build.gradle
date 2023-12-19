@@ -61,4 +61,10 @@ dependencies {
     //smooth bottom bar
     implementation 'com.github.ibrahimsn98:SmoothBottomBar:1.7.9'
 
+    // 네이버 지도 SDK
+    implementation 'com.naver.maps:map-sdk:3.17.0'
+
+    //휴대폰 단말의 위치정보를 얻기위한 기능
+    implementation 'com.google.android.gms:play-services-location:21.0.1'
+
 }
