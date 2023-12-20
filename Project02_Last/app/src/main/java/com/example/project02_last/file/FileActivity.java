@@ -1,5 +1,7 @@
 package com.example.project02_last.file;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
@@ -11,6 +13,7 @@ import androidx.core.app.ActivityCompat;
 import android.Manifest;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
@@ -63,7 +66,7 @@ public class FileActivity extends AppCompatActivity {
                 }
                 dialog.dismiss();
             });
-            AlertDialog dialog = builder.create();
+                    AlertDialog dialog = builder.create();
             builder.show();
         });
 
@@ -77,6 +80,7 @@ public class FileActivity extends AppCompatActivity {
             Glide.with(FileActivity.this).load(cameraUri).into(binding.imgv);
 
             File cameraFile = new File(getRealPath(cameraUri));
+
             //Multipart
             RequestBody file = RequestBody.create(MediaType.parse("image/jpeg"), cameraFile);
 
@@ -131,6 +135,7 @@ public class FileActivity extends AppCompatActivity {
         launcher.launch(cameraIntent);
 
     }
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
