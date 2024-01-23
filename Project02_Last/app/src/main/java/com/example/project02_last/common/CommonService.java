@@ -30,5 +30,7 @@ public interface CommonService {
     Call<String> clientSendFile(@Url String url, @PartMap HashMap<String, RequestBody> maps, @Part MultipartBody.Part file);
                                                                                         //@PartMap HashMap<String, MultipartBody.Part> fileMap
 
-
+    @Multipart//파일 전송 시 필요한 어노테이션
+    @POST
+    Call<String> clientSendFiles(@Url String url, @PartMap HashMap<String, RequestBody> maps, @PartMap HashMap<String, MultipartBody.Part> fileMap);
 }
